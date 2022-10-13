@@ -7,10 +7,10 @@ class AlertScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return   Scaffold(
       body: SafeArea(child: Container(
-        color: Colors.red,
+        color: Colors.green,
         child: const Center(
           
-          child: Text("data"),
+          child: Text("Alert Screen"),
         ),
       )),
     );
