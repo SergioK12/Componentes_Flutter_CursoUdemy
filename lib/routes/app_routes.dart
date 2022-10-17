@@ -1,12 +1,11 @@
 import 'package:componentes_flutter_curso_udemy/models/models.dart';
 import 'package:flutter/material.dart';
-
 import '../views/views.dart';
 
 class AppRoute {
   static const initialroute = 'home';
 
-  static final menuOptions = <MenuOptions>[
+  static  final menuOptions = <MenuOptions> [
     MenuOptions(nombre: "home", icon: Icons.home, name: "Home Screen", screen: const HomeScreen()),
     MenuOptions(nombre: "listview", icon: Icons.list_alt, name: "listView 1", screen: ListviewSceeen()),
     MenuOptions(nombre: "listview2", icon: Icons.list_alt_sharp, name: "listView 2", screen: Listview2Sceeen()),
@@ -19,7 +18,7 @@ class AppRoute {
 
     for (var item in menuOptions ){
       appRoute.addAll({
-        item.name: (BuildContext context) => item.screen });
+        item.nombre: (BuildContext context) => item.screen });
     }
     return appRoute;
   }

@@ -1,6 +1,4 @@
-import 'package:componentes_flutter_curso_udemy/models/models.dart';
 import 'package:componentes_flutter_curso_udemy/routes/app_routes.dart';
-import 'package:componentes_flutter_curso_udemy/views/views.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -22,7 +20,7 @@ class HomeScreen extends StatelessWidget {
            leading: Icon(AppRoute.menuOptions[index].icon),
            onTap: (){
            
-           Navigator.pushNamed(context, AppRoute.menuOptions[index].name) ;
+           Navigator.pushNamed(context, AppRoute.menuOptions[index].nombre) ;
            //Navigator.pushReplacement(context, route) ; ESTA SIRVE PARA NAVEGAR A LA SIGUIUENTE, ELIMINANDO DE LA PILA LA VISTA ANTERIOR
          }    
         ),
