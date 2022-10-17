@@ -11,7 +11,7 @@ class HomeScreen extends StatelessWidget {
         centerTitle: true,
         title: const Text("Home Screen"),
         elevation: 0,
-        backgroundColor: Colors.red,
+        //backgroundColor: Colors.red,
         ),
       body:  ListView.separated(
         itemCount: AppRoute.menuOptions.length,
@@ -20,7 +20,7 @@ class HomeScreen extends StatelessWidget {
            leading: Icon(AppRoute.menuOptions[index].icon),
            onTap: (){
            
-           Navigator.pushNamed(context, AppRoute.menuOptions[index].nombre) ;
+           Navigator.pushNamed(context, AppRoute.menuOptions[index].nombre);
            //Navigator.pushReplacement(context, route) ; ESTA SIRVE PARA NAVEGAR A LA SIGUIUENTE, ELIMINANDO DE LA PILA LA VISTA ANTERIOR
          }    
         ),
