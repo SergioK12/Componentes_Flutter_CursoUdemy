@@ -1,3 +1,5 @@
+import 'package:componentes_flutter_curso_udemy/models/models.dart';
+import 'package:componentes_flutter_curso_udemy/routes/app_routes.dart';
 import 'package:componentes_flutter_curso_udemy/views/views.dart';
 import 'package:flutter/material.dart';
 
@@ -14,13 +16,13 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: Colors.red,
         ),
       body:  ListView.separated(
-        itemCount: 10,
+        itemCount: AppRoute.menuOptions.length,
         itemBuilder: (context, index) =>  ListTile(
-           title: const Text("Rutas"),
-           leading: const Icon(Icons.security),
+           title: Text(AppRoute.menuOptions[index].name.toString()), 
+           leading: Icon(AppRoute.menuOptions[index].icon),
            onTap: (){
-           final route = MaterialPageRoute(builder: (context) => ListviewSceeen(),);
-           Navigator.push(context, route) ;
+           
+           Navigator.pushNamed(context, AppRoute.menuOptions[index].name) ;
            //Navigator.pushReplacement(context, route) ; ESTA SIRVE PARA NAVEGAR A LA SIGUIUENTE, ELIMINANDO DE LA PILA LA VISTA ANTERIOR
          }    
         ),
