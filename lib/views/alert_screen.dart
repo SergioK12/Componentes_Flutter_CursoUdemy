@@ -9,8 +9,7 @@ class AlertScreen extends StatelessWidget {
       body: SafeArea(child: Container(
         color: Colors.green,
         child: const Center(
-          
-          child: Text("Alert Screen"),
+          child: Text("¡Error, no deberias estar en esta pagina!"),
         ),
       )),
     );
