@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-
+import '../widgets/widgets.dart';
 class CardsView extends StatelessWidget {
   const CardsView({super.key});
 
@@ -12,8 +10,21 @@ class CardsView extends StatelessWidget {
        centerTitle: true,
       ),
       body: ListView(
+        padding: const EdgeInsets.all(8.0),
+        children: const [
+          CustomCard1(),
+          CustomCard2(),
+          CustomCard2(),
+          CustomCard2(),
+          CustomCard2(),
+          CustomCard2(),
+          CustomCard2(),
+          CustomCard2(),
+          CustomCard2(),
+        ],
 
       ),
     );
   }
 }
+

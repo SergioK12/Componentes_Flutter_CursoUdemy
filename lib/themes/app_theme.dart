@@ -1,4 +1,3 @@
-import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
 
 class AppTheme {
@@ -10,6 +9,9 @@ class AppTheme {
     appBarTheme: const AppBarTheme(
       color: pimary,
       elevation: 0,
+    ),
+    textButtonTheme: TextButtonThemeData(
+      style: TextButton.styleFrom(foregroundColor: AppTheme.pimary)
     )
   );
   
