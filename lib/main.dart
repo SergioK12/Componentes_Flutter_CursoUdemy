@@ -1,6 +1,8 @@
 import 'package:componentes_flutter_curso_udemy/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 
+import 'themes/app_theme.dart';
+
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
@@ -14,14 +16,7 @@ class MyApp extends StatelessWidget {
       initialRoute: AppRoute.initialroute,
       routes: AppRoute.getAppRoutes(),
       onGenerateRoute: AppRoute.onGenerateRoute,
-      theme: ThemeData.light().copyWith(
-        //Primary Color
-        primaryColor: Colors.amber,
-        //Color del Appbar
-        appBarTheme: const AppBarTheme(
-          color: Color.fromARGB(255, 207, 246, 49),
-        )
-        ),
+      theme: AppTheme.lightTheme
     );
   }
 }
