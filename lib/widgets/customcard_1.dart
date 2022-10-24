@@ -1,3 +1,4 @@
+import 'package:componentes_flutter_curso_udemy/themes/apptheme.dart';
 import 'package:flutter/material.dart';
 
 class CustomCard1 extends StatelessWidget {
@@ -20,8 +21,8 @@ class CustomCard1 extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                TextButton(onPressed: (){}, child: const Text("Ok")),
-                TextButton(onPressed: (){}, child: const Text("Cancelar"))
+                TextButton(onPressed: (){}, child: const Text("Ok", style: TextStyle(color: AppTheme.primaryColor),)),
+                TextButton(onPressed: (){}, child: const Text("Cancelar",style: TextStyle(color: AppTheme.primaryColor)))
               ],
             ),
           )
