@@ -9,7 +9,8 @@ class AppRoute {
     MenuOptions(nombre: "home", icon: Icons.home, name: "Home Screen", screen: const HomeScreen()),
     MenuOptions(nombre: "listview", icon: Icons.list_alt, name: "listView 1", screen: ListviewSceeen()),
     MenuOptions(nombre: "listview2", icon: Icons.list_alt_sharp, name: "listView 2", screen: Listview2Sceeen()),
-    MenuOptions(nombre: "alert", icon: Icons.warning, name: "Alert View", screen: const AlertScreen())
+    MenuOptions(nombre: "alert", icon: Icons.warning, name: "Alert View", screen: const AlertScreen()),
+    MenuOptions(nombre: "card", icon: Icons.credit_card, name: "Card View", screen: const CardScreen())
   ];
 
   static  Map<String, Widget Function(BuildContext)> getAppRoutes() {
