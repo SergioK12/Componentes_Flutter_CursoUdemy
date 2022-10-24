@@ -7,12 +7,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return   Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text("Home Screen"),
-        elevation: 0,
-        backgroundColor: Colors.red,
-        ),
+      appBar: AppBar(),
       body:  ListView.separated(
         itemCount: AppRoute.menuOptions.length,
         itemBuilder: (context, index) =>  ListTile(
