@@ -1,3 +1,4 @@
+import 'package:componentes_flutter_curso_udemy/themes/apptheme.dart';
 import 'package:flutter/material.dart';
 
 class ListviewSceeen extends StatelessWidget {
@@ -15,7 +16,7 @@ class ListviewSceeen extends StatelessWidget {
       ...lista.map(
         (nombres) => ListTile(
           title: Text(nombres),
-          trailing: const Icon(Icons.arrow_forward_ios_outlined),
+          trailing: const Icon(Icons.arrow_forward_ios_outlined, color: AppTheme.primaryColor,),
         )).toList()
       ],)
       
