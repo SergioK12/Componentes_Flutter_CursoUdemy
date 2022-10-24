@@ -1,3 +1,4 @@
+import 'package:componentes_flutter_curso_udemy/themes/apptheme.dart';
 import 'package:flutter/material.dart';
 
 class Listview2Sceeen extends StatelessWidget {
@@ -16,7 +17,7 @@ class Listview2Sceeen extends StatelessWidget {
         separatorBuilder: ( _ , __ ) => const Divider(),
         itemBuilder: (context, index) => ListTile(
             title: Text(lista[index]),
-            trailing: const Icon(Icons.security_rounded, color: Colors.deepOrange,),
+            trailing: const Icon(Icons.security_rounded, color: AppTheme.primaryColor,),
          )
         )
       

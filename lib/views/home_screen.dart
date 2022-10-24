@@ -1,4 +1,5 @@
 import 'package:componentes_flutter_curso_udemy/routes/app_routes.dart';
+import 'package:componentes_flutter_curso_udemy/themes/apptheme.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -12,7 +13,7 @@ class HomeScreen extends StatelessWidget {
         itemCount: AppRoute.menuOptions.length,
         itemBuilder: (context, index) =>  ListTile(
            title: Text(AppRoute.menuOptions[index].name.toString()), 
-           leading: Icon(AppRoute.menuOptions[index].icon),
+           leading: Icon(AppRoute.menuOptions[index].icon, color: AppTheme.primaryColor,),
            onTap: (){
            
            Navigator.pushNamed(context, AppRoute.menuOptions[index].nombre) ;
