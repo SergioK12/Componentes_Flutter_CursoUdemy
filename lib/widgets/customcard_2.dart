@@ -36,7 +36,7 @@ class CustomCard2 extends StatelessWidget {
              alignment: AlignmentDirectional.center,
              padding: const EdgeInsets.only(top: 10, bottom: 10),
              child:  Text(
-                 descripcion ?? "Esto sale cuando no hay descripcion",
+                 descripcion ?? "Este texto sale cuando no hay descripcion",
                  style: const TextStyle(
                   fontSize: 20,
                 ),
