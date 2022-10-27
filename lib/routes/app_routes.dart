@@ -4,10 +4,9 @@ import '../views/views.dart';
 
 class AppRoute {
   static const initialroute = 'home';
-    //static const MenuOptions()
 
   static  final menuOptions = <MenuOptions> [
-    //MenuOptions(nombre: "home", icon: Icons.home, name: "Home Screen", screen: const HomeScreen()),
+    MenuOptions(nombre: "home", icon: Icons.home, name: "Home Screen", screen: const HomeScreen()),
     MenuOptions(nombre: "listview", icon: Icons.list_sharp, name: "listView 1", screen: ListviewSceeen()),
     MenuOptions(nombre: "listview2", icon: Icons.list_alt_sharp, name: "listView 2", screen: Listview2Sceeen()),
     MenuOptions(nombre: "alert", icon: Icons.warning, name: "Alert View", screen: const AlertScreen()),
@@ -19,7 +18,6 @@ class AppRoute {
   static  Map<String, Widget Function(BuildContext)> getAppRoutes() {
 
    Map<String, Widget Function(BuildContext)>  appRoute = {};
-   appRoute.addAll({'home':(BuildContext context)=> const HomeScreen()});
 
     for (var item in menuOptions ){
       appRoute.addAll({
