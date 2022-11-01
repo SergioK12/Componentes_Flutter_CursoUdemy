@@ -8,7 +8,10 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return   Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: const Text("Inicio"),
+        centerTitle: true,
+      ),
       body:  ListView.separated(
         itemCount: AppRoute.menuOptions.length,
         itemBuilder: (context, index) =>  ListTile(
