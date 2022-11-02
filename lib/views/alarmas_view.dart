@@ -10,42 +10,61 @@ class AlarmasView extends StatelessWidget {
       appBar: AppBar(title: const Text("Programacion de alarmas"),),
       body: Center(
         child: Column(
+          
           mainAxisAlignment: MainAxisAlignment.center,
           children:  [
-             const Text("Personaliza tus alarmas"),
+             const Text("Selecciona la hora"),
              CarouselSlider(
   options: CarouselOptions(height: 100.0),
   items: [1,2,3,4,5,6,7,8,9,10,11,12].map((i) {
     return Builder(
       builder: (BuildContext context) {
         return Container(
-          width: 30,
+          width: double.infinity * 0.5,
           margin: const EdgeInsets.symmetric(horizontal: 5.0),
-          decoration: const BoxDecoration(
-            color: Colors.red
+          decoration:  BoxDecoration(
+            color: Colors.red,
+            borderRadius: BorderRadius.circular(30),
           ),
-          child: Text('text $i', style: const TextStyle(fontSize: 16.0),textAlign: TextAlign.center,)
+          child: Center(child: Text('$i', style: const TextStyle(fontSize: 60.0),textAlign: TextAlign.center,))
         );
       },
     );
   }).toList(),
 ),
+const Text("Selecciona los minutos"),
 CarouselSlider(
-  options: CarouselOptions(height: 400.0),
+  options: CarouselOptions(height: 100.0),
   items: [1,2,3,4,5].map((i) {
     return Builder(
       builder: (BuildContext context) {
-        return Container(
-          width: MediaQuery.of(context).size.width,
-          margin: EdgeInsets.symmetric(horizontal: 5.0),
-          decoration: BoxDecoration(
-            color: Colors.amber
+        return AnimatedContainer(
+          duration: const Duration(milliseconds: 900),
+          curve: Curves.bounceInOut,
+          
+          width: double.infinity * 0.5,
+          margin: const EdgeInsets.symmetric(horizontal: 5.0),
+          decoration:   BoxDecoration(
+            color: Colors.amber,
+            borderRadius: BorderRadius.circular(30),
           ),
-          child: Text('text $i', style: TextStyle(fontSize: 16.0),)
+          child: Center(child: Text('$i', style: const TextStyle(fontSize: 60.0), textAlign: TextAlign.center,))
         );
       },
     );
   }).toList(),
+),
+Row(
+  mainAxisAlignment: MainAxisAlignment.center,
+  children: [
+    Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: TextButton(
+        child: const  Text("Presiona"),
+        onPressed: (){},
+      ),
+    )
+  ],
 )
              
           ],
