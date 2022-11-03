@@ -22,7 +22,7 @@ class AlarmasView extends StatelessWidget {
           width: 30,
           margin: const EdgeInsets.symmetric(horizontal: 5.0),
           decoration: const BoxDecoration(
-            color: Colors.amber
+            color: Colors.red
           ),
           child: Text('text $i', style: const TextStyle(fontSize: 16.0),textAlign: TextAlign.center,)
         );
@@ -31,18 +31,17 @@ class AlarmasView extends StatelessWidget {
   }).toList(),
 ),
 CarouselSlider(
-  options: CarouselOptions(height: 100.0),
-  items: [1,2,3,4,5,6,7,8,9,10,11,12].map((i) {
+  options: CarouselOptions(height: 400.0),
+  items: [1,2,3,4,5].map((i) {
     return Builder(
       builder: (BuildContext context) {
         return Container(
-          width: 30,
-          //height: 10,
-          //margin: const EdgeInsets.symmetric(horizontal: 5.0),
-          decoration: const BoxDecoration(
-            color: Colors.red
+          width: MediaQuery.of(context).size.width,
+          margin: EdgeInsets.symmetric(horizontal: 5.0),
+          decoration: BoxDecoration(
+            color: Colors.amber
           ),
-          child: Text('text $i', style: const TextStyle(fontSize: 16.0, ),textAlign: TextAlign.center,)
+          child: Text('text $i', style: TextStyle(fontSize: 16.0),)
         );
       },
     );
