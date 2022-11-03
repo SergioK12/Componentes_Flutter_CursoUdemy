@@ -15,6 +15,7 @@ class AppRoute {
     MenuOptions(nombre: "circle", icon: Icons.circle_outlined, name: "Circle Avatar ", screen: const AvatarView()),
     MenuOptions(nombre: "animado", icon: Icons.check_box_outline_blank, name: "Container animated", screen: const AnimatedContainerView()),
     MenuOptions(nombre: "alarmas", icon: Icons.alarm, name: "Alarms", screen: const AlarmasView()),
+    MenuOptions(nombre: "entradas", icon: Icons.input, name: "Entradas", screen: const InputsView()),
   ];
 
 
