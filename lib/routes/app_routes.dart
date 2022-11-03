@@ -13,7 +13,8 @@ class AppRoute {
     MenuOptions(nombre: "alert", icon: Icons.warning, name: "Alert View", screen: const AlertScreen()),
     MenuOptions(nombre: "card", icon: Icons.credit_card, name: "Card View", screen: const CardScreen()),
     MenuOptions(nombre: "circle", icon: Icons.circle_outlined, name: "Circle Avatar ", screen: const AvatarView()),
-    MenuOptions(nombre: "animado", icon: Icons.check_box_outline_blank, name: "Container animated", screen: const AnimatedContainerView())
+    MenuOptions(nombre: "animado", icon: Icons.check_box_outline_blank, name: "Container animated", screen: const AnimatedContainerView()),
+    MenuOptions(nombre: "alarmas", icon: Icons.alarm, name: "Alarms", screen: const AlarmasView()),
   ];
 
 
