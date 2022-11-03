@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.componentes_flutter_curso_udemy">
+    <uses-permission android:name="android.permission.INTERNET"/>    
    <application
         android:label="componentes_flutter_curso_udemy"
         android:name="${applicationName}"
