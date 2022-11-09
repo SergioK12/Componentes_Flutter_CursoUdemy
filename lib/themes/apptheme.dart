@@ -26,7 +26,37 @@ class AppTheme {
         shape: const StadiumBorder(),
         elevation: 0,
       )
-
+    ),
+    inputDecorationTheme: const InputDecorationTheme(
+      floatingLabelStyle: TextStyle(
+        color: primaryColor,
+        
+      ),
+      enabledBorder: OutlineInputBorder(
+        borderSide: BorderSide(
+            //color: primaryColor
+          ),
+          borderRadius: BorderRadius.all(
+             Radius.circular(20),
+            )
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderSide: BorderSide(
+            color: Colors.green
+          ),
+          borderRadius: BorderRadius.all(
+             Radius.circular(30),
+            )
+      ),
+      border: OutlineInputBorder(
+        borderSide: BorderSide(
+            //color: primaryColor
+          ),
+          borderRadius: BorderRadius.only(
+             topLeft: Radius.circular(20),
+             topRight: Radius.circular(20)
+            )
+      ),
     )
   );
 }
