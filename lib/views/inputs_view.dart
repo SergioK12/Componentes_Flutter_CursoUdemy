@@ -27,13 +27,13 @@ class InputsView extends StatelessWidget {
             key: myFormKey,
             child: Column(
                 children:  [
-                   const CustomImputWidget( labelText: "Nombre del usuario",),
+                   const CustomImputWidget( labelText: "Nombre del usuario", formPropeties: 'nombre', formValues: {},),
                    const SizedBox(height: 30,),
-                   const CustomImputWidget( labelText: "Apellido del usuario",),
+                   const CustomImputWidget( labelText: "Apellido del usuario",formPropeties: 'apellido', formValues: {},),
                    const SizedBox(height: 30,),
-                   const CustomImputWidget( labelText: "Correo del usuario", keytipe: TextInputType.emailAddress,),
+                   const CustomImputWidget( labelText: "Correo del usuario", keytipe: TextInputType.emailAddress,formPropeties: 'correo', formValues: {},),
                    const SizedBox(height: 30,),
-                   const CustomImputWidget( labelText: "Contraseña", isPassword: true,),
+                   const CustomImputWidget( labelText: "Contraseña", isPassword: true,formPropeties: 'contra', formValues: {},),
                    const SizedBox(height: 30,),
           
                    ElevatedButton(
@@ -41,7 +41,9 @@ class InputsView extends StatelessWidget {
                       width: double.infinity,
                       child: Text("OK", textAlign: TextAlign.center,)),
                      onPressed: (){
+                      FocusScope.of(context).requestFocus( FocusNode());
                       if(!myFormKey.currentState!.validate()){
+                        print("Formulario invalido");
                         return;
                       }
                       debugPrint(formvalues.toString());

@@ -8,21 +8,26 @@ class CustomImputWidget extends StatelessWidget {
   final IconData? suffixIcon;
   final TextInputType? keytipe;
   final bool isPassword;
+  final String formPropeties;
+  final Map<String, String> formValues;
 
-  const CustomImputWidget(
-      {Key? key,
-      this.hintText,
-      this.helperText,
-      this.labelText,
-      this.icon,
-      this.suffixIcon,
-      this.isPassword = false,
-      this.keytipe})
-      : super(key: key);
+  const CustomImputWidget({
+    Key? key,
+    this.hintText,
+    this.helperText,
+    this.labelText,
+    this.icon,
+    this.suffixIcon,
+    this.isPassword = false,
+    this.keytipe,
+    required this.formPropeties,
+    required this.formValues,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      
       keyboardType: keytipe,
       obscureText: isPassword,
       //autofocus: true,
