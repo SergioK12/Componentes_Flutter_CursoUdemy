@@ -27,15 +27,13 @@ class CustomImputWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      
+      initialValue: '',
       keyboardType: keytipe,
       obscureText: isPassword,
       //autofocus: true,
       //initialValue: "Sergio Duarte",
       textCapitalization: TextCapitalization.words,
-      onChanged: (value) {
-        debugPrint(value);
-      },
+      onChanged: (value) => formValues[formPropeties] = value,
       validator: (value) {
         if (value == null) return "Este campo es requerido";
         return value.length < 3 ? "Minimo 3 letras" : null;
