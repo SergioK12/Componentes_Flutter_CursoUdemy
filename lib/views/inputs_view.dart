@@ -27,14 +27,25 @@ class InputsView extends StatelessWidget {
             key: myFormKey,
             child: Column(
                 children:  [
-                   const CustomImputWidget( labelText: "Nombre del usuario", formPropeties: 'nombre', formValues: {},),
+                    CustomImputWidget( labelText: "Nombre del usuario", formPropeties: 'nombre', formValues: formvalues,),
                    const SizedBox(height: 30,),
-                   const CustomImputWidget( labelText: "Apellido del usuario",formPropeties: 'apellido', formValues: {},),
+                    CustomImputWidget( labelText: "Apellido del usuario",formPropeties: 'apellido', formValues: formvalues,),
                    const SizedBox(height: 30,),
-                   const CustomImputWidget( labelText: "Correo del usuario", keytipe: TextInputType.emailAddress,formPropeties: 'correo', formValues: {},),
+                    CustomImputWidget( labelText: "Correo del usuario", keytipe: TextInputType.emailAddress,formPropeties: 'correo', formValues: formvalues,),
                    const SizedBox(height: 30,),
-                   const CustomImputWidget( labelText: "Contraseña", isPassword: true,formPropeties: 'contra', formValues: {},),
+                    CustomImputWidget( labelText: "Contraseña", isPassword: true,formPropeties: 'contra', formValues: formvalues,),
                    const SizedBox(height: 30,),
+                   DropdownButtonFormField(
+                    onChanged: (value) {
+                      debugPrint(value);
+                      formvalues['role'] = value ?? "Otro";
+                    },
+                    items: const [
+                    DropdownMenuItem(value: "AQdmin", child: Text("Admin"),),
+                    DropdownMenuItem(value: "User", child: Text("Usuario"),),
+                    DropdownMenuItem(value: "Otro", child: Text("Otro"),)
+
+                   ], ),
           
                    ElevatedButton(
                      child: const SizedBox(
@@ -43,7 +54,7 @@ class InputsView extends StatelessWidget {
                      onPressed: (){
                       FocusScope.of(context).requestFocus( FocusNode());
                       if(!myFormKey.currentState!.validate()){
-                        print("Formulario invalido");
+                        debugPrint("Formulario invalido");
                         return;
                       }
                       debugPrint(formvalues.toString());
