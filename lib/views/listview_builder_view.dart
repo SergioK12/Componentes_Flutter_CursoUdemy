@@ -17,6 +17,17 @@ class _ListViewBuilderViewState extends State<ListViewBuilderView> {
     super.initState();
     scrollController.addListener(() { 
       debugPrint('${scrollController.position.pixels},${scrollController.position.maxScrollExtent}');
+      if(scrollController.position.pixels + 500 >= scrollController.position.maxScrollExtent ){
+        add10();
+      }
+    });
+  }
+
+  void add10(){
+    final lastid = imagesid.last;
+    imagesid.addAll([1,2,3,4,5].map((e) => lastid + e));
+    setState(() {
+      
     });
   }
 
@@ -29,6 +40,7 @@ class _ListViewBuilderViewState extends State<ListViewBuilderView> {
           removeBottom: true,
           context: context,
           child: ListView.builder(
+            physics:const  BouncingScrollPhysics(),
             controller: scrollController,
               itemCount: imagesid.length,
               itemBuilder: (context, index) {
