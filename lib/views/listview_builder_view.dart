@@ -1,7 +1,24 @@
 import 'package:flutter/material.dart';
 
-class ListViewBuilderView extends StatelessWidget {
+class ListViewBuilderView extends StatefulWidget {
   const ListViewBuilderView({super.key});
+
+  @override
+  State<ListViewBuilderView> createState() => _ListViewBuilderViewState();
+}
+
+class _ListViewBuilderViewState extends State<ListViewBuilderView> {
+
+  final List<int>imagesid = [1,2,3,4,5,6,7,8,9,10];
+  final ScrollController scrollController = ScrollController();
+
+  @override
+  void initState() {
+    super.initState();
+    scrollController.addListener(() { 
+      debugPrint('${scrollController.position.pixels},${scrollController.position.maxScrollExtent}');
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -12,16 +29,17 @@ class ListViewBuilderView extends StatelessWidget {
           removeBottom: true,
           context: context,
           child: ListView.builder(
-              itemCount: 10,
+            controller: scrollController,
+              itemCount: imagesid.length,
               itemBuilder: (context, index) {
-          return   FadeInImage(
+          return  FadeInImage(
             width: double.infinity,
             height: 300,
             fit: BoxFit.cover,
               placeholder:  const AssetImage('assets/load.gif'),
               //https://picsum.photos/id/237/200/300
               //image: NetworkImage("https://picsum.photo/500/300?image=${index +1}"));
-              image: NetworkImage("https://picsum.photos/id/${index+1}/500/300"));
+              image: NetworkImage("https://picsum.photos/id/${imagesid[index]}/500/300"));
               },
             ),
         ));
