@@ -10,7 +10,7 @@ class SliderView extends StatefulWidget {
 
 class _SliderViewState extends State<SliderView> {
   double _slidervalue = 100;
-  bool _Sliderenable = true;
+  bool _sliderenable = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +23,7 @@ class _SliderViewState extends State<SliderView> {
               min: 0,
               max: 900,
               value: _slidervalue,
-              onChanged: _Sliderenable 
+              onChanged: _sliderenable 
               ? (value) {
                 _slidervalue = value;
                 setState(() {
@@ -32,19 +32,22 @@ class _SliderViewState extends State<SliderView> {
               }: null 
           ),
            CheckboxListTile(
+            activeColor: AppTheme.primaryColor,
             title: const Text("Habilitar edicion"),
-            value: _Sliderenable,
+            value: _sliderenable,
             onChanged: (value ){
-               _Sliderenable = value ?? true;
+              
+               _sliderenable = value ?? true;
                setState((){}
               );
             }
           ),
           SwitchListTile(
+            activeColor: AppTheme.primaryColor,
             title: const Text("Habilitar edicion"),
-            value: _Sliderenable,
+            value: _sliderenable,
             onChanged: (value ){
-               _Sliderenable = value;
+               _sliderenable = value;
                setState((){}
               );
             }
