@@ -52,6 +52,14 @@ class _ListViewBuilderViewState extends State<ListViewBuilderView> {
     });
   }
 
+  Future <void> onRefresh() async{
+    await Future.delayed(const Duration(seconds: 2));
+    final lastId = imagesid.last;
+    imagesid.clear();
+    imagesid.add(lastId +1);
+    add10();
+  }
+
   @override
   Widget build(BuildContext context) {
 
@@ -64,21 +72,25 @@ class _ListViewBuilderViewState extends State<ListViewBuilderView> {
           context: context,
           child: Stack(
             children: [
-              ListView.builder(
-                physics:const  BouncingScrollPhysics(),
-                controller: scrollController,
-                  itemCount: imagesid.length,
-                  itemBuilder: (context, index) {
-              return  FadeInImage(
-                width: double.infinity,
-                height: 300,
-                fit: BoxFit.cover,
-                  placeholder:  const AssetImage('assets/load.gif'),
-                  //https://picsum.photos/id/237/200/300
-                  //image: NetworkImage("https://picsum.photo/500/300?image=${index +1}"));
-                  image: NetworkImage("https://picsum.photos/id/${imagesid[index]}/500/300"));
-                  },
-                ),
+              RefreshIndicator(
+                color: AppTheme.primaryColor,
+                onRefresh: onRefresh,
+                child: ListView.builder(
+                  physics:const  BouncingScrollPhysics(),
+                  controller: scrollController,
+                    itemCount: imagesid.length,
+                    itemBuilder: (context, index) {
+                return  FadeInImage(
+                  width: double.infinity,
+                  height: 300,
+                  fit: BoxFit.cover,
+                    placeholder:  const AssetImage('assets/load.gif'),
+                    //https://picsum.photos/id/237/200/300
+                    //image: NetworkImage("https://picsum.photo/500/300?image=${index +1}"));
+                    image: NetworkImage("https://picsum.photos/id/${imagesid[index]}/500/300"));
+                    },
+                  ),
+              ),
 
                 if(_isloading)
 
