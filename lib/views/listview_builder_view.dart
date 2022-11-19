@@ -25,9 +25,21 @@ class _ListViewBuilderViewState extends State<ListViewBuilderView> {
     await Future.delayed(const Duration(seconds: 3));
     add10();
     _isloading = false;
+
+    if(scrollController.position.pixels + 100 <= scrollController.position.maxScrollExtent) return;
+
+    scrollController.animateTo(
+      scrollController.position.pixels + 100,
+      duration: const Duration(milliseconds: 300),
+      curve: Curves.fastOutSlowIn
+    );
     
   }
-
+  void add10(){
+    final lastid = imagesid.last;
+    imagesid.addAll([1,2,3,4,5].map((e) => lastid + e));
+    setState(() {});
+  }
 
   @override
   void initState() {
@@ -36,16 +48,7 @@ class _ListViewBuilderViewState extends State<ListViewBuilderView> {
       debugPrint('${scrollController.position.pixels},${scrollController.position.maxScrollExtent}');
       if(scrollController.position.pixels + 500 >= scrollController.position.maxScrollExtent ){
         fetchData();
-        //add10();
       }
-    });
-  }
-
-  void add10(){
-    final lastid = imagesid.last;
-    imagesid.addAll([1,2,3,4,5].map((e) => lastid + e));
-    setState(() {
-      
     });
   }
 
@@ -76,6 +79,8 @@ class _ListViewBuilderViewState extends State<ListViewBuilderView> {
                   image: NetworkImage("https://picsum.photos/id/${imagesid[index]}/500/300"));
                   },
                 ),
+
+                if(_isloading)
 
                  Positioned(
                   bottom: 40,
