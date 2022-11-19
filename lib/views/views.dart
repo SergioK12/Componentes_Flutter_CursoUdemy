@@ -1,3 +1,4 @@
+export 'package:componentes_flutter_curso_udemy/views/listview_builder_view.dart';
 export 'package:componentes_flutter_curso_udemy/views/slider_view.dart';
 export 'package:componentes_flutter_curso_udemy/views/inputs_view.dart';
 export 'package:componentes_flutter_curso_udemy/views/alarmas_view.dart';

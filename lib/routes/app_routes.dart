@@ -16,7 +16,8 @@ class AppRoute {
     MenuOptions(nombre: "animado", icon: Icons.check_box_outline_blank, name: "Container animated", screen: const AnimatedContainerView()),
     MenuOptions(nombre: "alarmas", icon: Icons.alarm, name: "Alarms", screen: const AlarmasView()),
     MenuOptions(nombre: "entradas", icon: Icons.input, name: "Entradas", screen: const InputsView()),
-     MenuOptions(nombre: "Slider", icon: Icons.picture_in_picture, name: "Deslizador", screen: const SliderView()),
+    MenuOptions(nombre: "slider", icon: Icons.picture_in_picture, name: "Deslizador", screen: const SliderView()),
+    MenuOptions(nombre: "listviewbuilder", icon: Icons.blur_linear_rounded, name: "Infinite Scroll", screen: const ListViewBuilderView()),
   ];
 
 
